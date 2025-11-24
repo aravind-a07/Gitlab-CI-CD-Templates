@@ -13,14 +13,13 @@ stages:
 
 default:
   tags:
-    # - amd64  # Old custom runner (deprecated)
-    - saas-linux-medium-amd64
+    - amd64
 
 build_image:
   stage: build
   image: docker:20
   tags:
-    - saas-linux-medium-amd64
+    - amd64
   services: 
     - docker:dind
   script:
@@ -111,7 +110,7 @@ deploy_docker:
     DOCKER_DRIVER: overlay2
     DOCKER_AUTH_CONFIG: '{"auths":{"registry.gitlab.com":{"username":"${CI_CD_API_USER}","password":"${CI_CD_API_TOKEN}"}}}'
   tags:
-    - saas-linux-medium-amd64
+    - amd64
   environment:
     name: $LIFECYCLE_STAGE
   script:
@@ -129,7 +128,7 @@ migrations:
   variables:
     DOCKER_AUTH_CONFIG: '{"auths":{"registry.gitlab.com":{"username":"${CI_CD_API_USER}","password":"${CI_CD_API_TOKEN}"}}}'
   tags:
-    - saas-linux-medium-amd64
+    - amd64
   environment:
     name: $LIFECYCLE_STAGE
   script:
