@@ -11,13 +11,12 @@ stages:
 
 default:
   tags:
-    # - amd64  # Old custom runner (deprecated)
-    - saas-linux-medium-amd64
+    - amd64
 
 build_package:
   stage: build
   tags:
-    - saas-linux-medium-amd64
+    - amd64
   image: node:16.14.2
   script:
     - |
@@ -35,7 +34,7 @@ build_package:
 build_root_package:
   stage: build
   tags:
-    - saas-linux-medium-amd64
+    - amd64
   image: ubuntu:latest
   script:
     - |
