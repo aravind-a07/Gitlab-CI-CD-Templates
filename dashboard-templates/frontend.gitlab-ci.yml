@@ -17,7 +17,7 @@ default:
 build_package:
   stage: build
   tags:
-    - amd64
+    - saas-linux-medium-amd64
   image: node:16.14.2
   script:
     - |
