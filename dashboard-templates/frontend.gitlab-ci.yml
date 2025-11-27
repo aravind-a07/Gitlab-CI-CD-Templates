@@ -34,7 +34,7 @@ build_package:
 build_root_package:
   stage: build
   tags:
-    - saas-linux-medium-amd64
+    - amd64
   image: ubuntu:latest
   script:
     - |
